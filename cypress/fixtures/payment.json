@@ -1,0 +1,10 @@
+{
+    "valid": {
+        "email": "sb-uem1x34761092@personal.example.com",
+        "password": "tPw&<f3j"
+    },
+    "invalid": {
+        "email": "testaccount@personal.example.com",
+        "password": "test123@"
+    }
+}

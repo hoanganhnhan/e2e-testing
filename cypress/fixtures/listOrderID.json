@@ -1,0 +1,30 @@
+{
+    "valid": [
+        {
+            "orderID": "675d4eb5f6de69bb2c421bac",
+            "payment": "Paid",
+            "shipping": "Delivered"
+        },
+        {
+            "orderID": "675d5af4f6de69bb2c421bd6",
+            "payment": "Paid",
+            "shipping": "Not Delivered"
+        },
+        {
+            "orderID": "6768467d80f420e16a4d16f6",
+            "payment": "Not Paid",
+            "shipping": "Not Delivered"
+        },
+        {
+            "orderID": "675d52c8f6de69bb2c421bb7",
+            "payment": "Paid",
+            "shipping": "Not Delivered"
+        }
+    ],
+    "invalid": [
+        {
+            "testName": "Not Existing",
+            "orderID": "675d4eb5f6de69bb2c421ba3"
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "valid": [
+        {
+            "orderItems": [
+                {
+                    "slug": "nike-slim-pant",
+                    "name": "iPhone 13 Pro 256GB Memory",
+                    "quantity": 1,
+                    "image": "/images/phone.jpg",
+                    "price": 599.99,
+                    "product": "67595e45a87afcd7639852a7",
+                    "_id": "67595e45a87afcd7639852a7"
+                },
+                {
+                    "slug": "adidas-fit-pant",
+                    "name": "Logitech G-Series Gaming Mouse",
+                    "quantity": 1,
+                    "image": "/images/mouse.jpg",
+                    "price": 49.99,
+                    "product": "67595e45a87afcd7639852aa",
+                    "_id": "67595e45a87afcd7639852aa"
+                }
+            ],
+            "shippingAddress": {
+                "address": "thu duc",
+                "city": "hcm",
+                "postalCode": "123",
+                "country": "Vietnam"
+            },
+            "date": "2024-12-21",
+            "paymentMethod": "PayPal",
+            "itemsPrice": 649.98,
+            "shippingPrice": 0,
+            "taxPrice": 97.5,
+            "totalPrice": 747.48,
+            "totalItems": 2,
+            "user": {
+                "email": "john@email.com",
+                "password": "123456"
+            }
+        },
+        {
+            "orderItems": [
+                {
+                    "slug": "nike-slim-pant",
+                    "name": "iPhone 13 Pro 256GB Memory",
+                    "quantity": 1,
+                    "image": "/images/phone.jpg",
+                    "price": 599.99,
+                    "product": "67595e45a87afcd7639852a7",
+                    "_id": "67595e45a87afcd7639852a7"
+                }
+            ],
+            "shippingAddress": {
+                "fullName": "John Doe",
+                "address": "q9",
+                "city": "hcm",
+                "postalCode": "123",
+                "country": "Vietnam"
+            },
+            "date": "2024-12-21",
+            "paymentMethod": "PayPal",
+            "itemsPrice": 599.99,
+            "shippingPrice": 0,
+            "taxPrice": 90,
+            "totalPrice": 689.99,
+            "totalItems": 1,
+            "user": {
+                "email": "john@email.com",
+                "password": "123456"
+            }
+        },
+        {
+            "orderItems": [
+                {
+                    "slug": "adidas-fit-pant",
+                    "name": "Logitech G-Series Gaming Mouse",
+                    "quantity": 2,
+                    "image": "/images/mouse.jpg",
+                    "price": 49.99,
+                    "product": "67595e45a87afcd7639852aa",
+                    "_id": "67595e45a87afcd7639852aa"
+                }
+            ],
+            "shippingAddress": {
+                "address": "thu duc",
+                "city": "hcm",
+                "postalCode": "123",
+                "country": "Vietnam"
+            },
+            "date": "2024-12-21",
+            "paymentMethod": "PayPal",
+            "itemsPrice": 99.98,
+            "shippingPrice": 10,
+            "taxPrice": 15,
+            "totalPrice": 124.98,
+            "totalItems": 1,
+            "user": {
+                "email": "john@email.com",
+                "password": "123456"
+            }
+        }
+    ],
+    "invalid": {
+        "user": {
+            "email": "john@email.com",
+            "password": "123456"
+        },
+        "shippingAddress": [
+            {
+                "testName": "Empty Address",
+                "address": "",
+                "city": "HCM",
+                "postalCode": "123",
+                "country": "Vietnam",
+                "error": {
+                    "errorField": "address",
+                    "errorMessage": "Please fill in this field."
+                }
+            },
+            {
+                "testName": "Empty City",
+                "address": "thu duc",
+                "city": "",
+                "postalCode": "123",
+                "country": "Vietnam",
+                "error": {
+                    "errorField": "city",
+                    "errorMessage": "Please fill in this field."
+                }
+            },
+            {
+                "testName": "Empty PostalCode",
+                "address": "thu duc",
+                "city": "HCM",
+                "postalCode": "",
+                "country": "Vietnam",
+                "error": {
+                    "errorField": "postalCode",
+                    "errorMessage": "Please fill in this field."
+                }
+            },
+            {
+                "testName": "Empty Country",
+                "address": "thu duc",
+                "city": "HCM",
+                "postalCode": "123",
+                "country": "",
+                "error": {
+                    "errorField": "country",
+                    "errorMessage": "Please fill in this field."
+                }
+            }
+        ]
+    }
+}

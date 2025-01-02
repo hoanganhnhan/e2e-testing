@@ -1,0 +1,77 @@
+{
+  "valid": {
+    "name": "John Doe",
+    "email": "john@email.com",
+    "password": "123456"
+  },
+  "invalid": [
+    {
+      "testName": "Empty field",
+      "email": "",
+      "password": "",
+      "error": {
+        "errorField": "toastify",
+        "errorMessage": "Invalid email or password"
+      }
+    },
+    {
+      "testName": "Empty password",
+      "email": "john@email.com",
+      "password": "",
+      "error": {
+        "errorField": "toastify",
+        "errorMessage": "Invalid email or password"
+      }
+    },
+    {
+      "testName": "Non-existed account",
+      "email": "123john@email.com",
+      "password": "123456",
+      "error": {
+        "errorField": "toastify",
+        "errorMessage": "Invalid email or password"
+      }
+    },
+    {
+      "testName": "Incorrect Password",
+      "email": "john@email.com",
+      "password": "1234567",
+      "error": {
+        "errorField": "toastify",
+        "errorMessage": "Invalid email or password"
+      }
+    },
+    {
+      "testName": "Invalid Email Format",
+      "email": "johnemail.com",
+      "password": "123456",
+      "error": {
+        "errorField": "email",
+        "errorMessage": "Please include an '@' in the email address. 'johnemail.com' is missing an '@'."
+      }
+    },
+    {
+      "testName": "Invalid Email Format",
+      "email": "john@email",
+      "password": "123456",
+      "error": {
+        "errorField": "email",
+        "errorMessage": "Please match the requested format."
+      }
+    },
+    {
+      "testName": "Invalid Email Format",
+      "email": "john@",
+      "password": "123456",
+      "error": {
+        "errorField": "email",
+        "errorMessage": "Please enter a part following '@'."
+      }
+    }
+  ],
+  "admin": {
+    "name": "Admin",
+    "email": "admin@email.com",
+    "password": "123456"
+  }
+}

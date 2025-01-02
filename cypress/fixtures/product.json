@@ -1,0 +1,33 @@
+{
+    "inStockProduct":[
+        {
+            "slug": "nike-slim-pant",
+            "name": "Nike Slim Pant",
+            "quantity": 2,
+            "image": "/images/p3.jpg",
+            "price": 25,
+            "product": "65617973061526173a2d89ee",
+            "_id": "65617973061526173a2d89ee"
+        },
+        {
+            "slug": "adidas-fit-pant",
+            "name": "Adidas Fit Pant",
+            "quantity": 2,
+            "image": "/images/p4.jpg",
+            "price": 65,
+            "product": "65617973061526173a2d89ef",
+            "_id": "65617973061526173a2d89ef"
+        },
+        {
+            "slug": "long-sleeve-shirt",
+            "name": "Long sleeve shirt",
+            "quantity": 1,
+            "image": "/images/p7.jpg",
+            "price": 65,
+            "stock":5,
+            "product": "65617973061526173a2d89f2",
+            "_id": "65617973061526173a2d89f2"
+        }
+
+    ]
+}
