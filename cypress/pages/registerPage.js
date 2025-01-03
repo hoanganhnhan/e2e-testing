@@ -1,4 +1,4 @@
-export const signupPage = {
+export const registerPage = {
     TXT_NAME: "#name",
     TXT_EMAIL: "#email",
     TXT_PASSWORD: "#password",
@@ -44,7 +44,7 @@ export const signupPage = {
     },
 
     clickSignUp() {
-        cy.get('button').contains('Sign Up').click({ force: true });
+        cy.get('button').contains('Register').click({ force: true });
         return this;
     },
 

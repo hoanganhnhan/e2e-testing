@@ -1,7 +1,7 @@
 import { cartPage } from "../pages/cartPage";
 import { loginPage } from "../pages/loginPage";
 import { navBar } from "../pages/navBar";
-import { orderHistoryPage } from "../pages/orderHistoryPage";
+import { profilePage } from "../pages/profilePage";
 import { placeOrderPage } from "../pages/placeOrderPage";
 import { productDetailPage } from "../pages/productDetailPage";
 import { productListPage } from "../pages/productListPage"
@@ -54,7 +54,7 @@ describe("Place Order Successfully", () => {
                     .clickNavDropDown()
                     .clickUserProfile();
                 cy.wait(3000);
-                orderHistoryPage
+                profilePage
                     .isOrderDisplayedCorrectly(orderId)
                     .clickViewOrderDetail(orderId);
 

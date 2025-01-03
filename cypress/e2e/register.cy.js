@@ -1,10 +1,10 @@
-import { signupPage } from "../pages/signupPage";
+import { registerPage } from "../pages/registerPage";
 import { navBar } from "../pages/navBar";
 import { loginPage } from "../pages/loginPage";
 
 describe("Sign up successfully", () => {
     beforeEach(() => {
-        cy.fixture("signUpData").as("data");
+        cy.fixture("registerData").as("data");
         cy.visit(Cypress.env("home"));
         navBar.clickSignIn();
         loginPage.clickSignUp();
@@ -13,7 +13,7 @@ describe("Sign up successfully", () => {
 
     it("Sign Up with valid account", () => {
         cy.get("@data").then((data) => {
-            signupPage
+            registerPage
                 .inputSignUp(data.valid.name, data.valid.email, data.valid.password, data.valid.confirmPassword)
                 .clickSignUp();
 
@@ -24,29 +24,29 @@ describe("Sign up successfully", () => {
 
 describe("Can not Sign Up with invalid account", () => {
     beforeEach(() => {
-        cy.fixture("signUpData").as("data");
+        cy.fixture("registerData").as("data");
         cy.visit(Cypress.env("home"));
         navBar.clickSignIn();
         loginPage.clickSignUp();
         cy.wait(500);
     });
 
-    const user = require('../fixtures/signUpData.json');
+    const user = require('../fixtures/registerData.json');
     const invalidAccount = user.invalid;
 
     invalidAccount.forEach((data) => {
         it(data.testName, () => {
-            signupPage
+            registerPage
                 .inputSignUp(data.name, data.email, data.password, data.confirmPassword)
                 .clickSignUp();
 
             if (data.error.errorField == "toastify") {
-                signupPage
+                registerPage
                     .isNotificationCorrect(data.error.errorMessage)
                     .clickCloseToastifyButton();
             }
             else {
-                signupPage.checkErrorMessage(data.error.errorMessage, data.error.errorField);
+                registerPage.checkErrorMessage(data.error.errorMessage, data.error.errorField);
             }
 
         });

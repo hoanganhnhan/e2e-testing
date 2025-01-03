@@ -30,12 +30,7 @@ export const loginPage = {
     },
 
     clickSignUp() {
-        cy.get('a').contains('Create your account').click({ force: true });
-        return this;
-    },
-
-    clickResetPassword() {
-        cy.get('a').contains('Reset Password').click({ force: true });
+        cy.get('a[href="/register?redirect=/"]').click({ force: true });
         return this;
     },
 

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-02T17:31:11.714Z",
+    "end": "2025-01-02T17:31:22.631Z",
+    "duration": 10917,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f1ec2fa-ebca-4f0b-9a2e-054f36af4575",
+      "title": "",
+      "fullFile": "cypress\\e2e\\paymentProcess.cy.js",
+      "file": "cypress\\e2e\\paymentProcess.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e38958ca-7d05-459f-a4c8-bb6674bd1e63",
+          "title": "Pay an order Successfully",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "with Valid PayPal account",
+              "fullTitle": "Pay an order Successfully with Valid PayPal account",
+              "timedOut": null,
+              "duration": 10832,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"payment\").as(\"payPalAccount\");\ncy.fixture(\"listOrderID\").as(\"orderIDs\");\ncy.get(\"@orderIDs\").then(orderIDs => {\n  let orderID = orderIDs.valid[1].orderID;\n  _navBar.navBar.clickNavDropDown().clickUserProfile();\n  cy.wait(2000);\n  cy.log;\n  _orderHistoryPage.orderHistoryPage.clickViewOrderDetail(orderID);\n});\ncy.get(\"@payPalAccount\").then(payPalAccount => {\n  let ppAccount = payPalAccount.valid;\n  _payOrder.payOrder.payOrder(ppAccount);\n  _orderDetailPage.orderDetailPage.isOrderPaid();\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.fade.alert.alert-success.show>' to contain 'Not Paid'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.fade.alert.alert-success.show>' to contain 'Not Paid'\n    at Object.isOrderNotPaid (webpack://e2e_automationtest/./cypress/pages/orderDetailPage.js:38:78)\n    at Object.payOrder (webpack://e2e_automationtest/./cypress/pages/payOrder.js:26:24)\n    at Context.eval (webpack://e2e_automationtest/./cypress/e2e/paymentProcess.cy.js:38:17)",
+                "diff": null
+              },
+              "uuid": "5975df72-0da0-4008-aa99-8963b80e03c4",
+              "parentUUID": "e38958ca-7d05-459f-a4c8-bb6674bd1e63",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5975df72-0da0-4008-aa99-8963b80e03c4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10832,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -7,15 +7,6 @@ export const navBar = {
     BTN_ADMIN: "#adminmenu",
     TXT_CARD_COUNT: "#basic-navbar-nav a span",
 
-    clickNavCategory() {
-        cy.get(this.BTN_NAV_CATEGORY).click({ force: true });
-        return this;
-    },
-
-    clickNavCategoryItem(categoryItem) {
-        cy.get(this.BTN_NAV_CATEGORY_ITEM).contains(categoryItem).click({ force: true });
-        return this;
-    },
 
     clickViewCart() {
         cy.get(this.BTN_NAV).contains('Cart').click({ force: true });
@@ -54,5 +45,10 @@ export const navBar = {
         }
         return this;
     },
+
+    isUserNameCorrect(name) {
+        cy.get('#username').should('have.text', name);
+        return this;
+    }
 
 }

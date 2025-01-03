@@ -1,0 +1,28 @@
+{
+  "valid": [
+    {
+      "fullName": "Ha Trinh Updated",
+      "successMessage": "Profile updated successfully"
+    },
+    {
+      "email": "haupdated@email.com",
+      "successMessage": "Profile updated successfully"
+    },
+    {
+      "fullName": "Nguyen Ha",
+      "email": "ha@email.com",
+      "successMessage": "Profile updated successfully"
+    }
+  ],
+  "invalid": {
+    "email": "test@com",
+    "emailError": "Invalid email format",
+    "fullName": "Tr1nh Nguyen H@",
+    "fullNameError": "Invalid name",
+    "blankFieldError": "Fields cannot be empty"
+  },
+  "user": {
+    "email": "ha@email.com",
+    "password": "123456"
+  }
+}

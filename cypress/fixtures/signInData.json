@@ -6,7 +6,7 @@
   },
   "invalid": [
     {
-      "testName": "Empty field",
+      "testName": "Empty email and password",
       "email": "",
       "password": "",
       "error": {
@@ -42,7 +42,7 @@
       }
     },
     {
-      "testName": "Invalid Email Format",
+      "testName": "Invalid Email Format (missing @)",
       "email": "johnemail.com",
       "password": "123456",
       "error": {
@@ -51,16 +51,16 @@
       }
     },
     {
-      "testName": "Invalid Email Format",
+      "testName": "Invalid Email Format (missing .com)",
       "email": "john@email",
       "password": "123456",
       "error": {
-        "errorField": "email",
-        "errorMessage": "Please match the requested format."
+        "errorField": "toastify",
+        "errorMessage": "Invalid email or password"
       }
     },
     {
-      "testName": "Invalid Email Format",
+      "testName": "Invalid Email Format (missing a part following @)",
       "email": "john@",
       "password": "123456",
       "error": {

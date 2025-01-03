@@ -1,0 +1,120 @@
+{
+    "valid": {
+        "name": "Ngan",
+        "email": "baongan@gmail.com",
+        "password": "12345678@X",
+        "confirmPassword": "12345678@X"
+    },
+    "invalid": [
+        {
+            "testName": "Empty name",
+            "name": "",
+            "email": "test0@email.com",
+            "password": "123456",
+            "confirmPassword": "123456",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "User validation failed: name: Path `name` is required."
+            }
+        },
+        {
+            "testName": "Empty email",
+            "name": "Ngan",
+            "email": "",
+            "password": "123456",
+            "confirmPassword": "123456",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "User validation failed: email: Path `email` is required."
+            }
+        },
+        {
+            "testName": "Empty password",
+            "name": "Ngan",
+            "email": "test0@email.com",
+            "password": "",
+            "confirmPassword": "123456",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "Passwords do not match"
+            }
+        },
+        {
+            "testName": "Empty confirmPassword",
+            "name": "Ngan",
+            "email": "test0@email.com",
+            "password": "123456",
+            "confirmPassword": "",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "Passwords do not match"
+            }
+        },
+        {
+            "testName": "Empty password and confirmPassword",
+            "name": "Ngan",
+            "email": "test0@email.com",
+            "password": "",
+            "confirmPassword": "",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "User validation failed: password: Path `password` is required."
+            }
+        },
+        {
+            "testName": "Existed Email",
+            "name": "Ngan",
+            "email": "baongan@gmail.com",
+            "password": "12345678@X",
+            "confirmPassword": "12345678@X",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "User already exists"
+            }
+        },
+        {
+            "testName": "Invalid Email: missing @",
+            "name": "Ngan",
+            "email": "baongangmail.com",
+            "password": "12345678@X",
+            "confirmPassword": "12345678@X",
+            "error": {
+                "errorField": "email",
+                "errorMessage": "Please include an '@' in the email address."
+            }
+        },
+        {
+            "testName": "Invalid Email: missing .com",
+            "name": "Ngan",
+            "email": "invalid@email",
+            "password": "12345678@X",
+            "confirmPassword": "12345678@X",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "Please match the requested format."
+            }
+        },
+        {
+            "testName": "Invalid Email: missing a part following @",
+            "name": "Ngan",
+            "email": "baongan@",
+            "password": "12345678@X",
+            "confirmPassword": "12345678@X",
+            "error": {
+                "errorField": "email",
+                "errorMessage": "Please enter a part following '@'."
+            }
+        },
+        {
+            "testName": "Password does not match Confirm Password",
+            "name": "Ngan",
+            "email": "test0@gmail.com",
+            "password": "12345678@X",
+            "confirmPassword": "12345678",
+            "error": {
+                "errorField": "toastify",
+                "errorMessage": "Passwords do not match"
+            }
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import { orderHistoryPage } from "../pages/orderHistoryPage";
+import { profilePage } from "../pages/profilePage";
 import { orderDetailPage } from "../pages/orderDetailPage"
 import { navBar } from "../pages/navBar";
 import { loginPage } from "../pages/loginPage";
@@ -28,7 +28,7 @@ describe("Mark as delivered Successfully", () => {
 
         cy.get("@listOrderID").then((ids) => {
             let id = ids.valid[1].orderID; //order is paid, and not deliverd
-            orderHistoryPage
+            profilePage
                 .clickViewOrderDetail(id);
             cy.wait(500);
             orderDetailPage
@@ -64,7 +64,7 @@ describe("Can not mark as delivered", () => {
         cy.wait(3000);
         cy.get("@listOrderID").then((ids) => {
             let id = ids.valid[2].orderID; //order is not paid
-            orderHistoryPage
+            profilePage
                 .clickViewOrderDetail(id);
             cy.wait(500);
             orderDetailPage
@@ -92,7 +92,7 @@ describe("Can not mark as delivered", () => {
         cy.wait(3000);
         cy.get("@listOrderID").then((ids) => {
             let id = ids.valid[0].orderID; //order has been delivered
-            orderHistoryPage
+            profilePage
                 .clickViewOrderDetail(id);
             cy.wait(500);
             orderDetailPage
@@ -119,7 +119,7 @@ describe("Can not mark as delivered", () => {
         cy.wait(3000);
         cy.get("@listOrderID").then((ids) => {
             let id = ids.valid[3].orderID; //order is paid, and not deliverd
-            orderHistoryPage
+            profilePage
                 .clickViewOrderDetail(id);
             cy.wait(500);
             orderDetailPage

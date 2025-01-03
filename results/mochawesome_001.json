@@ -1,0 +1,286 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-02T17:30:07.585Z",
+    "end": "2025-01-02T17:30:16.993Z",
+    "duration": 9408,
+    "testsRegistered": 9,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 7,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8539dbd8-ad26-4f71-b6bb-73435137573b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\forgetPassword.cy.js",
+      "file": "cypress\\e2e\\forgetPassword.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "934df5da-b6ec-4a8b-9314-75cb1534cb05",
+          "title": "Reset Password successfully",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Reset Password successfully",
+              "fullTitle": "Reset Password successfully Reset Password successfully",
+              "timedOut": null,
+              "duration": 4970,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@data\").then(data => {\n  _forgetPasswordPage.forgetPasswordPage.typeEmail(data.valid.email).clickSubmit();\n  _forgetPasswordPage.resetPasswordPage.inputResetPassword(data.valid.password, data.valid.confirmPassword).clickResetPassword();\n  _loginPage.loginPage.isNotificationCorrect(data.valid.message).inputSignIn(data.valid.email, data.valid.password).clickLogin();\n  _navBar.navBar.isUserNameCorrect(data.valid.name);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Reset Password' within the element: <a> but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Reset Password successfully`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Reset Password' within the element: <a> but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Reset Password successfully`\n    at Object.clickResetPassword (webpack://e2e_automationtest/./cypress/pages/loginPage.js:38:20)\n    at Context.eval (webpack://e2e_automationtest/./cypress/e2e/forgetPassword.cy.js:10:18)",
+                "diff": null
+              },
+              "uuid": "447c7e89-aa59-46c8-a4ce-bfbea13ea4d5",
+              "parentUUID": "934df5da-b6ec-4a8b-9314-75cb1534cb05",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "447c7e89-aa59-46c8-a4ce-bfbea13ea4d5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4970,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c83db15f-9e43-4ec9-abe5-17c919434780",
+          "title": "Can not Reset Password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Empty email",
+              "fullTitle": "Can not Reset Password Empty email",
+              "timedOut": null,
+              "duration": 4332,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.forgetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.forgetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Reset Password' within the element: <a> but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Can not Reset Password`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Reset Password' within the element: <a> but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Can not Reset Password`\n    at Object.clickResetPassword (webpack://e2e_automationtest/./cypress/pages/loginPage.js:38:20)\n    at Context.eval (webpack://e2e_automationtest/./cypress/e2e/forgetPassword.cy.js:39:18)",
+                "diff": null
+              },
+              "uuid": "4a30cac2-959f-4d8f-9271-dcb2d7ae33b8",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Non-existed account",
+              "fullTitle": "Can not Reset Password Non-existed account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.forgetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.forgetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "bba1b43c-8122-4a65-947e-a81068fd316b",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Invalid Email",
+              "fullTitle": "Can not Reset Password Invalid Email",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.forgetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.forgetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "74f9561b-edf8-4003-b4dd-b67e3d5036ee",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Invalid Email",
+              "fullTitle": "Can not Reset Password Invalid Email",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.forgetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.forgetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "8b7a4e2e-1920-45e5-a09f-f68afc434506",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Invalid Email",
+              "fullTitle": "Can not Reset Password Invalid Email",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.forgetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.forgetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "fba5768f-cebe-4a97-9132-01e2cb15cd8a",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Empty password",
+              "fullTitle": "Can not Reset Password Empty password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\n_forgetPasswordPage.resetPasswordPage.inputResetPassword(data.password, data.confirmPassword).clickResetPassword();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.resetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.resetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "44dff5e3-6e50-4f40-bc79-eea9834cf274",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Invalid password",
+              "fullTitle": "Can not Reset Password Invalid password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\n_forgetPasswordPage.resetPasswordPage.inputResetPassword(data.password, data.confirmPassword).clickResetPassword();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.resetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.resetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "f682dc42-f12a-4faa-8263-e23a0764ea27",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Password does not match Confirm password",
+              "fullTitle": "Can not Reset Password Password does not match Confirm password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_forgetPasswordPage.forgetPasswordPage.typeEmail(data.email).clickSubmit();\n_forgetPasswordPage.resetPasswordPage.inputResetPassword(data.password, data.confirmPassword).clickResetPassword();\nif (data.error.errorField == \"toastify\") {\n  _forgetPasswordPage.resetPasswordPage.isNotificationCorrect(data.error.errorMessage).clickCloseToastifyButton();\n} else {\n  _forgetPasswordPage.resetPasswordPage.checkErrorMessage(data.error.errorMessage);\n}",
+              "err": {},
+              "uuid": "9b094f48-d6de-40e1-bef6-85afbc283081",
+              "parentUUID": "c83db15f-9e43-4ec9-abe5-17c919434780",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4a30cac2-959f-4d8f-9271-dcb2d7ae33b8"
+          ],
+          "pending": [],
+          "skipped": [
+            "bba1b43c-8122-4a65-947e-a81068fd316b",
+            "74f9561b-edf8-4003-b4dd-b67e3d5036ee",
+            "8b7a4e2e-1920-45e5-a09f-f68afc434506",
+            "fba5768f-cebe-4a97-9132-01e2cb15cd8a",
+            "44dff5e3-6e50-4f40-bc79-eea9834cf274",
+            "f682dc42-f12a-4faa-8263-e23a0764ea27",
+            "9b094f48-d6de-40e1-bef6-85afbc283081"
+          ],
+          "duration": 4332,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
