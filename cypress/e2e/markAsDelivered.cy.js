@@ -25,7 +25,6 @@ describe("Mark as delivered Successfully", () => {
     });
 
     it("Admin can mark as delivered successfully", () => {
-
         cy.get("@listOrderID").then((ids) => {
             let id = ids.valid[1].orderID;
             profilePage
